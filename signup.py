@@ -5,7 +5,6 @@ class SignupPage(tk.Frame):
     def __init__(self, master, on_login):
         super().__init__(master, bg="#F4F6FA")
         self.on_login = on_login
-        self.on_signup = on_signup
 
         tk.Label(self, text="CampusLife", font=("Arial", 26, "bold"), bg="#F4F6FA", fg="#263B63").pack(pady=(35, 5))
         tk.Label(self, text="Create Your Account", font=("Arial", 18, "bold"), bg="#F4F6FA", fg="#263B63").pack(pady=(10, 20))
