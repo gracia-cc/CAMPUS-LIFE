@@ -47,4 +47,4 @@ class SignupPage(tk.Frame):
             messagebox.showinfo("Akun berhasil dibuat", "silahkan login!")
             self.on_login()
         else :
-            messagebox.showeror("Apendaftaran gagal", "username sudah digunakan!")
+            messagebox.showerror("Pendaftaran gagal", "username sudah digunakan!")
