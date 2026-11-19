@@ -3,6 +3,7 @@ import database
 from login import LoginPage
 from signup import SignupPage
 from tkinter import messagebox
+from dashboard import DashboardPage
 
 class CampusLifeApp(tk.Tk):
     def __init__(self):
@@ -30,6 +31,8 @@ class CampusLifeApp(tk.Tk):
 
     def login_berhasil(self, username):
         self.bersihkan_halaman()
+        halaman = DashboardPage(self, username, on_logout=self.tampilkan_login)
+        halaman.pack(fill="both", expand=True)
 
         tk.Label(self, text="Welcome to CampusLife!", font=("Arial", 22, "bold"), bg="white", fg="#263B63").pack(pady=(180, 15))
         tk.Label(self, text=f"Hello, {username}!", font=("Arial", 14), bg="#F4F6FA").pack()
