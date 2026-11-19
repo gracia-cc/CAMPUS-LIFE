@@ -2,6 +2,7 @@ import tkinter as tk
 import database
 from login import LoginPage
 from signup import SignupPage
+from notification import tampilkan_notifikasi
 from tkinter import messagebox
 from dashboard import DashboardPage
 
@@ -9,8 +10,9 @@ class CampusLifeApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("CampusLife")
-        self.geometry("500x650")
-        self.resizable(False, False)
+        self.state("zoomed")
+        self.resizable(True, True)
+        self.minsize(500, 650)
         self.configure(bg="#F4F6FA")
         database.buat_tabel()
         self.tampilkan_login()
@@ -38,6 +40,8 @@ class CampusLifeApp(tk.Tk):
         tk.Label(self, text=f"Hello, {username}!", font=("Arial", 14), bg="#F4F6FA").pack()
         tk.Label(self, text="Login berhasil!", font=("Arial", 11), bg="white", fg="#777777").pack(pady=20)
         tk.Button(self, text="Logout", bg="#365B9D", fg="white", relief="flat", command=self.tampilkan_login).pack(ipadx=25, ipady=8)
+
+        tampilkan_notifikasi("Campus Life",f"Selamat datang, {username}!")
 
 if __name__ == "__main__":
      aplikasi = CampusLifeApp()
